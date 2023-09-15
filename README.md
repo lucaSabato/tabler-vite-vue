@@ -6,7 +6,12 @@ Include [Tabler](https://tabler.io)'s source Sass and individual [Bootstrap](htt
 
 ## Edit in browser
 
+[![Open with Codesandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/lucaSabato/tabler-vite-vue/tree/main)
+
+!!This package required Node v18 and it is not yet supported in StackBlitz as the default nove is v16.20.0
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/lucaSabato/tabler-vite-vue/?file=index.html)
+
 
 ## How to see the demo
 
@@ -15,6 +20,8 @@ git clone https://github.com/lucaSabato/tabler-vite-vue.git
 npm i
 npm start
 ```
+open `http://localhost:8080` in your browser
+
 ## How to use
 
 Prerequisite
@@ -31,6 +38,7 @@ npm i tabler-vite-vue
 Import the core file into your main.js file
 
 ```js
+// main.js
 import 'tabler-vite-vue/dist/core.js'
 ```
 
@@ -38,6 +46,7 @@ or
 
 
 ```js
+// main.js
 import 'tabler-vite-vue'
 ```
 

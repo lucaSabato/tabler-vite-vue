@@ -31,3 +31,9 @@ document.querySelectorAll('[data-bs-toggle="popover"]')
     .forEach(popover => {
         new Popover(popover)
     })
+
+// Tooltip
+document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach(tooltip => {
+        new Tooltip(tooltip)
+    })

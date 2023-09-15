@@ -8,9 +8,9 @@ import Footer from '../components/AppFooter.vue'
   <div class="container py-4 px-3 mx-auto">
     <Header />
 
-    <h1>Build Bootstrap with Vue</h1>
+    <h1>Build Tabler with Bootstrap Js and with Vue</h1>
     <div class="col-lg-8 px-0">
-      <p class="fs-4">You've successfully loaded the Bootstrap + Vue example! It's loaded up with <a
+      <p class="fs-4">You've successfully loaded the Tabler + Bootstrap + Vue example! It's loaded up with <a
           href="https://getbootstrap.com/">Bootstrap 5</a> and uses Vue and Vite to compile and bundle our Sass and
         JavaScript. It also features a handful of custom Vue components.</p>
       <p>If this button appears blue and the link appears purple, you've done it!</p>
@@ -18,6 +18,7 @@ import Footer from '../components/AppFooter.vue'
 
     <button type="button" class="btn btn-primary me-3" data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasExample">Toggle offcanvas</button>
+
     <a id="popoverButton" class="text-success" href="#" role="button" data-bs-toggle="popover" title="Custom popover"
       data-bs-content="This is a Bootstrap popover.">Example popover</a>
 
@@ -85,6 +86,7 @@ import Footer from '../components/AppFooter.vue'
     </div>
 
     <h3>Button Example</h3>
+
     <div>
       <p class="d-inline-flex gap-1">
         <button type="button" class="btn">Normal Button</button>
@@ -107,21 +109,22 @@ import Footer from '../components/AppFooter.vue'
     </div>
 
     <h3>Carousel Example</h3>
+
     <div>
       <div id="id_1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="w-100 bg-dark" style="height: 250px">
+            <div class="w-100 bg-dark d-flex align-items-center justify-content-center" style="height: 250px">
               <h1 class="text-success">Slide 1</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <div class="w-100 bg-dark" style="height: 250px">
+            <div class="w-100 bg-dark d-flex align-items-center justify-content-center" style="height: 250px">
               <h1 class="text-success">Slide 2</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <div class="w-100 bg-dark" style="height: 250px">
+            <div class="w-100 bg-dark d-flex align-items-center justify-content-center" style="height: 250px">
               <h1 class="text-success">Slide 3</h1>
             </div>
           </div>
@@ -137,22 +140,22 @@ import Footer from '../components/AppFooter.vue'
       </div>
     </div>
 
-    <div>
+    <div class="mt-3 mb-3">
       <div id="id_2" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="w-100 bg-dark" style="height: 250px">
-              <h1 class="text-success">Slide 1</h1>
+            <div class="w-100 bg-info d-flex align-items-center justify-content-center" style="height: 250px">
+              <h1 class="text-primary">Slide 1</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <div class="w-100 bg-dark" style="height: 250px">
-              <h1 class="text-success">Slide 2</h1>
+            <div class="w-100 bg-info d-flex align-items-center justify-content-center" style="height: 250px">
+              <h1 class="text-primary">Slide 2</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <div class="w-100 bg-dark" style="height: 250px">
-              <h1 class="text-success">Slide 3</h1>
+            <div class="w-100 bg-info d-flex align-items-center justify-content-center" style="height: 250px">
+              <h1 class="text-primary">Slide 3</h1>
             </div>
           </div>
         </div>
@@ -167,8 +170,10 @@ import Footer from '../components/AppFooter.vue'
       </div>
     </div>
 
+    <h3>Collapse Example</h3>
+
     <div class="mb-3">
-      <h3>Collapse Example</h3>
+
       <div>
         <p class="d-inline-flex gap-1">
           <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
@@ -184,6 +189,10 @@ import Footer from '../components/AppFooter.vue'
           <div class="card card-body">
             Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
             user activates the relevant trigger.
+            <i data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Tooltip is here"
+        ref="info"> &copy; </i> - Hover to see toolip
           </div>
         </div>
       </div>
