@@ -1,0 +1,36 @@
+{
+  "name": "tabler-vite-vue",
+  "description": "Include Tabler's source Sass and individual JavaScript plugins with Vue and Vite.",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "lucaSabato/tabler-vite-vue",
+  "license": "MIT",
+  "stackblitz": {
+    "startCommand": "npm start"
+  },
+  "main": "dist/core.js",
+  "sass": "scss/core.scss",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build --outDir ./demo",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "fix": "npm run lint -- --fix",
+    "test": "npm run build && npm run lint"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@tabler/core": "^1.0.0-beta20",
+    "bootstrap": "^5.3.0",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "sass": "^1.64.1",
+    "sass-loader": "^13.3.2",
+    "vite": "^4.4.7",
+    "vue-loader": "^17.2.2"
+  }
+}
