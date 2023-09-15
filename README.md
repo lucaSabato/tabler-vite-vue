@@ -6,24 +6,38 @@ Include [Tabler](https://tabler.io)'s source Sass and individual [Bootstrap](htt
 
 ## Edit in browser
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/lucaSabato/tabler-vite-vue?file=index.html)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/lucaSabato/tabler-vite-vue/?file=index.html)
 
 ## How to see the demo
 
 ```sh
 git clone https://github.com/lucaSabato/tabler-vite-vue.git
-npm install
+npm i
 npm start
 ```
 ## How to use
 
-Install packege in your project
+Prerequisite
 
 ```sh
-npm i lucaSabato/tabler-vite-vue
+npm i -D sass
 ```
-Import the core file into your mail.js file
+Install the package in your project
+
+```sh
+npm i -D sass
+npm i tabler-vite-vue
+```
+Import the core file into your main.js file
 
 ```js
 import 'tabler-vite-vue/dist/core.js'
 ```
+
+or
+
+
+```js
+import 'tabler-vite-vue'
+```
+
