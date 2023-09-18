@@ -1,7 +1,7 @@
 {
   "name": "tabler-vite-vue",
   "description": "Include Tabler's source Sass and individual Bootstrap JavaScript plugins with Vue and Vite.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": "lucaSabato/tabler-vite-vue",
   "author": "Luca Sabato <luca.s@fdpgroup.co.uk>",
   "license": "MIT",
@@ -26,13 +26,12 @@
     "@tabler/core": "^1.0.0-beta20",
     "bootstrap": "^5.3.0",
     "vue": "^3.3.4",
-    "sass": "^1.64.1"
+    "sass": "^1.67.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.15.1",
-    "sass": "^1.67.0",
     "sass-loader": "^13.3.2",
     "vite": "^4.4.7",
     "vue-loader": "^17.2.2"
