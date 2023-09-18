@@ -8,7 +8,7 @@ Include [Tabler](https://tabler.io)'s source Sass and individual [Bootstrap](htt
 
 [![Open with Codesandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/lucaSabato/tabler-vite-vue/tree/main)
 
-!!This package required Node v18 and it is not yet supported in StackBlitz as the default nove is v16.20.0
+!!This package required Node v18 and it is not yet supported in StackBlitz as the default Node is v16.20.0
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/lucaSabato/tabler-vite-vue/?file=index.html)
 
@@ -35,18 +35,26 @@ Install the package in your project
 npm i -D sass
 npm i tabler-vite-vue
 ```
-Import the core file into your main.js file
+Example of `main.js` file
 
 ```js
-// main.js
-import 'tabler-vite-vue/dist/core.js'
-```
+import { createApp } from 'vue'
+import App from './App.vue'
 
-or
+import { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip } from 'tabler-vite-vue'
 
+createApp(App).mount('#app')
 
-```js
-// main.js
-import 'tabler-vite-vue'
+// Popover
+document.querySelectorAll('[data-bs-toggle="popover"]')
+    .forEach(popover => {
+        new Popover(popover)
+    })
+
+// Tooltip
+document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach(tooltip => {
+        new Tooltip(tooltip)
+    })
 ```
 
