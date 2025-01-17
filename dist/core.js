@@ -1,19 +1,39 @@
 // Import our custom core Tabler CSS
-import '../src/scss/core.scss'
+import "../src/scss/core.scss";
 
 // Import only the Bootstrap components we need
-import { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip } from 'bootstrap';
+import {
+    Alert,
+    Button,
+    Carousel,
+    Collapse,
+    Dropdown,
+    Modal,
+    Offcanvas,
+    Popover,
+    ScrollSpy,
+    Tab,
+    Toast,
+    Tooltip,
+} from "bootstrap";
 
 // Initialize Bootstrap components
 const initializeComponent = (selector, Component) => {
-    document.querySelectorAll(selector).forEach(element => {
+    document.querySelectorAll(selector).forEach((element) => {
         try {
-            new Component(element)
+            if (Component.name === "Tooltip" || Component.name === "Popover") {
+                // For Tooltip and Popover, pass options if necessary
+                const options = {}; // Add any custom options here if needed
+                new Component(element, options);
+            } else {
+                // Default initialization for other components
+                new Component(element);
+            }
         } catch (error) {
-            console.error(`Failed to initialize ${Component.name}:`, error)
+            console.error(`Failed to initialize ${Component.name}:`, error);
         }
-    })
-}
+    });
+};
 
 // Map of components and their selectors
 const components = {
@@ -28,21 +48,49 @@ const components = {
     '[data-bs-toggle="scrollspy"]': ScrollSpy,
     '[data-bs-toggle="tab"]': Tab,
     '[data-bs-toggle="toast"]': Toast,
-    '[data-bs-toggle="tooltip"]': Tooltip
-}
+    '[data-bs-toggle="tooltip"]': Tooltip,
+};
 
 // Initialize all components
 Object.entries(components).forEach(([selector, Component]) => {
-    initializeComponent(selector, Component)
-})
+    initializeComponent(selector, Component);
+});
+
+// Create install function for Vue plugin
+const install = (app) => {
+    // Register all components
+    [
+        Alert,
+        Button,
+        Carousel,
+        Collapse,
+        Dropdown,
+        Modal,
+        Offcanvas,
+        Popover,
+        ScrollSpy,
+        Tab,
+        Toast,
+        Tooltip,
+    ].forEach((component) => {
+        app.component(component.name, component);
+    });
+
+    // Initialize all components after Vue app is mounted
+    app.mixin({
+        mounted() {
+            if (this.$root === this) {
+                // Only run once from root component
+                Object.entries(components).forEach(([selector, Component]) => {
+                    initializeComponent(selector, Component);
+                });
+            }
+        },
+    });
+};
 
 // Export components
 export {
-    Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip
-}
-
-// Add default export with all components
-export default {
     Alert,
     Button,
     Carousel,
@@ -54,5 +102,22 @@ export default {
     ScrollSpy,
     Tab,
     Toast,
-    Tooltip
-}
+    Tooltip,
+};
+
+// Add default export with all components
+export default {
+    install, // This allows Vue to use it as a plugin
+    Alert,
+    Button,
+    Carousel,
+    Collapse,
+    Dropdown,
+    Modal,
+    Offcanvas,
+    Popover,
+    ScrollSpy,
+    Tab,
+    Toast,
+    Tooltip,
+};
