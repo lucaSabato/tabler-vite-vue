@@ -51,40 +51,14 @@ const components = {
     '[data-bs-toggle="tooltip"]': Tooltip,
 };
 
-// Initialize all components
-Object.entries(components).forEach(([selector, Component]) => {
-    initializeComponent(selector, Component);
-});
-
-// Create install function for Vue plugin
 const install = (app) => {
-    // Register all components
-    [
-        Alert,
-        Button,
-        Carousel,
-        Collapse,
-        Dropdown,
-        Modal,
-        Offcanvas,
-        Popover,
-        ScrollSpy,
-        Tab,
-        Toast,
-        Tooltip,
-    ].forEach((component) => {
-        app.component(component.name, component);
-    });
-
     // Initialize all components after Vue app is mounted
     app.mixin({
         mounted() {
-            if (this.$root === this) {
-                // Only run once from root component
-                Object.entries(components).forEach(([selector, Component]) => {
-                    initializeComponent(selector, Component);
-                });
-            }
+            Object.entries(components).forEach(([selector, Component]) => {
+                initializeComponent(selector, Component);
+            });
+
         },
     });
 };
@@ -105,7 +79,6 @@ export {
     Tooltip,
 };
 
-// Add default export with all components
 export default {
     install, // This allows Vue to use it as a plugin
     Alert,
